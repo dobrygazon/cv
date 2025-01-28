@@ -1,690 +1,691 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>RAMIL GASANOV</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
+	/* cspell:disable-file */
+	/* webkit printing magic: print all background colors */
+	html {
+		-webkit-print-color-adjust: exact;
 	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
+	* {
+		box-sizing: border-box;
+		-webkit-print-color-adjust: exact;
 	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-default_background {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
-.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
 	
-</style></head><body><article id="0a861aa6-67fc-4508-97dc-2db4c9d368ec" class="page sans"><header><h1 class="page-title">RAMIL GASANOV</h1><p class="page-description"></p></header><div class="page-body"><div id="126f2501-8456-80e1-9077-ee719def69f5" class="column-list"><div id="126f2501-8456-80cd-a7cc-f81f3af2a4c8" style="width:43.75%" class="column"><figure id="126f2501-8456-80fc-809a-cd07d80e5b03" class="image"><a href="imgs/40aaadc7-747b-49a0-8e09-8fd6eb4f06e4.png"><img style="width:336px" src="imgs/40aaadc7-747b-49a0-8e09-8fd6eb4f06e4.png"/></a></figure></div><div id="126f2501-8456-8059-b355-f654d2c58448" style="width:56.25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9feafab8-8f9e-4df2-ade4-7e90cc63fd55"><div style="font-size:1.5em"><span class="icon">👋</span></div><div style="width:100%">Founding product marketer with over a decade of experience driving growth for developer tools. Expert in crafting clear product messaging, sales enablement, and product-led growth strategies. Skilled in DevRel and aligning product development with developer needs. Proficient in modern app development, JAMstack, and databases. Adept at collaborating asynchronously in remote environments with engineering teams to deliver products that developers love.<br/><br/>✉️ <br/><a href="mailto:gasanoff.ramil@gmail.com">gasanoff.ramil@gmail.com</a> </div></figure></div></div><h1 id="6507c7f5-bfc1-4c05-a058-7d05becdac6c" class="">EXPERIENCE</h1><h3 id="4ad399f9-58b8-4eb4-a624-19a532cc09c4" class="">Head of Product</h3><p id="124f2501-8456-80d2-803c-d9d70b5bab47" class="block-color-gray">CAD Exchanger<em>, Baku, Azerbaijan (Jan 2022- Present)</em></p><ul id="137f2501-8456-8077-b4bd-dda97383a754" class="bulleted-list"><li style="list-style-type:disc">Spearheaded strategic messaging for CAD Exchanger SDK, securing a market-leading position and driving 2x YoY revenue growth for 10 consecutive years.</li></ul><ul id="137f2501-8456-8078-a7e9-e4e7c11d49f3" class="bulleted-list"><li style="list-style-type:disc">Boosted customer adoption by 15% by optimizing the developer experience across the customer journey in collaboration with engineering teams.</li></ul><ul id="137f2501-8456-8051-8eff-fe6422f70a0c" class="bulleted-list"><li style="list-style-type:disc">Refined sales enablement materials, including product decks and case studies, aligning with product-led growth strategies.</li></ul><ul id="137f2501-8456-80c7-85a1-d330621e8d0b" class="bulleted-list"><li style="list-style-type:disc">Collaborated with cross-functional teams to create and execute a product roadmap, prioritizing customer needs and maximizing acquisition opportunities.</li></ul><h3 id="124f2501-8456-80ea-ba23-c998f0aca974" class="">Head of Marketing </h3><p id="b3e92e52-6886-4178-8fed-2f2035c213e3" class="block-color-gray">CAD Exchanger<em>, Baku, Azerbaijan (Jan 2018 - Dec 2021)</em></p><ul id="126f2501-8456-8039-bfa7-e452bdd21247" class="bulleted-list"><li style="list-style-type:disc">Orchestrated digital marketing strategies that increased organic reach by 10x, growing monthly website traffic from thousands to tens of thousands, surpassing competitors by 3x.</li></ul><ul id="137f2501-8456-809e-bba1-c74443babe65" class="bulleted-list"><li style="list-style-type:disc">Secured strategic cusotmers such as SIEMENS, Li Auto, and Hyundai, aligning marketing efforts with product development.</li></ul><ul id="137f2501-8456-8042-b43f-fb8684ddad56" class="bulleted-list"><li style="list-style-type:disc">Enhanced brand recognition through public speaking engagements and participation in industry events.</li></ul><ul id="137f2501-8456-8074-a122-ef11b9b8b23f" class="bulleted-list"><li style="list-style-type:disc">Negotiated a partnership with Microsoft, securing Azure credits to launch a SaaS platform.</li></ul><ul id="137f2501-8456-80e6-9e89-e37394d6f774" class="bulleted-list"><li style="list-style-type:disc">Led the launch of new products and features, distributing them across omnichannel platforms to 100K+ customers and prospects.</li></ul><ul id="137f2501-8456-8089-9584-ee8f9b9f4aa6" class="bulleted-list"><li style="list-style-type:disc">Managed a high-performing cross-functional team of 15, setting clear KPIs and driving accountability across Sales, Marketing, and Product functions.</li></ul><h3 id="4410c0b9-3370-4f58-89d3-f856fc7dc156" class="">Sr. Technical Marketing Engineer</h3><p id="2239c55a-bd0a-44ed-8b72-907c18b6903f" class="block-color-gray">CAD Exchanger<em>, Nizhny Novgorod, Russia (Jan 2017 - Dec 2017)</em></p><ul id="f05cdfd6-0abb-47b1-972f-22df272394ba" class="bulleted-list"><li style="list-style-type:disc">Developed and implemented an SEO strategy that positioned CAD Exchanger as a market leader.</li></ul><ul id="137f2501-8456-8059-ac4e-f19e9400e804" class="bulleted-list"><li style="list-style-type:disc">Designed and automated reporting dashboards for product and website metrics, enabling data-driven decision-making to fuel growth.</li></ul><h3 id="6d22bf41-2d0d-450e-9e62-a1fd48a49bf8" class="">Technical Marketing Engineer</h3><p id="3f8394dd-4fe7-488a-bdd8-7d4712ee1230" class="block-color-gray">CAD Exchanger<em>, Nizhny Novgorod, Russia (Feb 2015 - Dec 2016)</em></p><ul id="126f2501-8456-802f-b260-ccd9bf18cccc" class="bulleted-list"><li style="list-style-type:disc">Conducted product demonstrations and provided sales support.</li></ul><ul id="128f2501-8456-80e7-ad58-f3212553faf3" class="bulleted-list"><li style="list-style-type:disc">Built marketing technology stack for email, social media and sales automation. </li></ul><ul id="126f2501-8456-80a5-9f68-f42de7705b5f" class="bulleted-list"><li style="list-style-type:disc">Wrote customer success stories and blog posts.</li></ul><p id="35c28b3c-4754-435c-9a04-584204b97a1c" class="">
-</p><hr id="124f2501-8456-80f7-b452-e2153d899b0b"/><h1 id="c4cf055a-931b-4211-a540-b74be6b22c60" class="">PUBLIC TALKS AND ARTICLES</h1><p id="7cec7e4e-5ea7-45c5-ab92-8095fcf6d67b" class=""><span style="border-bottom:0.05em solid">PUBLIC TALKS</span></p><h3 id="657caba7-da6b-48cc-a9d6-374c2363adcd" class="">Overview of CAD Exchanger SDK</h3><p id="f9ed3777-dbd1-4a5b-b82a-e3b6f85b35a8" class=""><em>C3Days 2021, 2022, 2023</em></p><h3 id="d4938855-b05a-4773-ace2-1fbd5d9ca457" class="">Native technology stack for Industry 4.0</h3><p id="9aa30cab-0b9f-4c30-b010-679122c5a087" class=""><em>CIPR tech, 2022</em></p><h3 id="5bfa2dbf-5ece-4dd6-9ffd-81ab5c6b8b36" class=""><a href="https://www.youtube.com/live/mfs5XgUaZdU?feature=shared&amp;t=625">Pitch session</a></h3><p id="86744358-670b-44ee-84ea-0533e521dd4b" class=""><em>CIPR tech 2021</em></p><h3 id="10a91f12-0d95-45ad-91a3-bd38e8047bca" class="">3 reasons to move CAD data exchange to Web</h3><p id="772aa389-d089-4d47-badb-72f46c4733f6" class=""><em>LEQ: Lean, Engineering, Quality, 2019</em></p><p id="188fae4e-3ce0-462d-986e-6e51fe1dee09" class="">
-</p><p id="410ab0a9-874b-458b-9cbe-441755bf29d9" class=""><span style="border-bottom:0.05em solid">ARTICLES</span></p><h3 id="b4d8fd89-5eff-4c9b-9d2a-4b3505e8b244" class="">100+ publications in industry magazines:</h3><ul id="61f24335-3d41-4242-a762-1e0226a85780" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.digitalengineering247.com/topic/tag/CAD-Exchanger">DigitalEngineering</a> </li></ul><ul id="cce28a53-d93c-4415-afc4-a7b4c6b7ad6f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://develop3d.com/tag/cad-exchanger/">DEVELOP3D</a> </li></ul><ul id="7e5f1f54-bc9c-4c0f-9b1f-99ea2bcc3872" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.solidsmack.com/cad/cad-exchanger-adds-u3d-support-3d-cad-file-import-to-unity/">SolidSmack</a> </li></ul><ul id="5cfb2c4c-6aa0-4a12-a27d-fd09e44c435c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://isicad.net/news.php?news=21211">IsiCAD.net</a></li></ul><ul id="303db6d2-6fa4-4cd3-9712-b83faf9e5b07" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.upfrontezine.com/2018/04/upf-974.html">CAD Exchanger on the Cloud</a></li></ul><p id="6f1b0ccf-3789-40e4-9fda-aea1dd3b2e56" class="">
-</p><hr id="1db2d249-15cb-490c-9cea-06831aa25ced"/><h1 id="73ae985d-959d-4457-8025-100b9722f631" class="">EDUCATION AND CERTIFICATIONS</h1><p id="669c846b-bc73-4cac-8f63-1cad5ba9d0c3" class=""><span style="border-bottom:0.05em solid">EDUCATION</span></p><h3 id="f764c081-a981-4c19-9804-d3844a096441" class="">Higher School of Economics, Innovation Management, PhD</h3><p id="1d0641f5-fbd6-4227-a7b6-9c9e06731cda" class="block-color-gray"><em>2021 (unfinished due to Relocation)</em></p><h3 id="71eb3695-b175-42a1-9550-e6a74f511f1c" class="">RANEPA, Marketing Management MSc</h3><p id="d494d71e-4050-4c3f-b7c2-58a5d862b9a5" class="block-color-gray"><em>2015</em></p><h3 id="a55b2b49-af68-4251-bca4-854088d9e894" class="">Higher School of Economics, Management BSc</h3><p id="3dede4fb-09f8-47b6-ba22-b23fe118ccc0" class="block-color-gray"><em>2013</em></p><p id="cde5f0ac-7207-4df0-b879-b9b24b508d3d" class="">
-</p><p id="ac7119b9-d6b5-4be1-8db3-2d7d5116cc3c" class=""><span style="border-bottom:0.05em solid">CERTIFICATIONS</span></p><div id="124f2501-8456-80ec-a08e-ca9b5ff24d18" class="column-list"><div id="124f2501-8456-8096-a0e6-c6f43edc4a92" style="width:50%" class="column"><figure id="124f2501-8456-8040-8d07-f6148b26fb48" class="image"><a href="imgs/image.png"><img style="width:330.984375px" src="imgs/image.png"/></a></figure></div><div id="124f2501-8456-80c6-be8b-d8a29a8df85e" style="width:50%" class="column"><figure id="124f2501-8456-80aa-bffa-f76e2f215a07" class="image" style="text-align:center"><a href="imgs/prompt-design-in-vertex-ai-skill-badge.png"><img style="width:240px" src="imgs/prompt-design-in-vertex-ai-skill-badge.png"/></a></figure></div></div><div id="124f2501-8456-80fe-91e3-ecebaf0f8350" class="column-list"><div id="124f2501-8456-802f-9f9d-ecffffc9a5f0" style="width:50%" class="column"><figure id="124f2501-8456-80bf-9d13-fc49419a5632" class="image"><a href="imgs/image1.png"><img style="width:707.984375px" src="imgs/image1.png"/></a></figure></div><div id="124f2501-8456-8017-9d6d-cdc6250fb077" style="width:50%" class="column"><figure id="124f2501-8456-80c9-8d9a-fc4a74832b65" class="image"><a href="imgs/image2.png"><img style="width:330.984375px" src="imgs/image2.png"/></a></figure></div></div><p id="124f2501-8456-803c-a451-cb8039ed9ba7" class="block-color-gray"><em>2024 </em></p><h3 id="124f2501-8456-8058-b7ce-e6b9c88cdea7" class="">Yandex Praktikum, <a href="https://practicum.yandex.ru/python-free/">Python Development Basics</a></h3><p id="212437c5-c3a8-43f9-9baf-aa61e285fc03" class="block-color-gray"><em>2021 </em></p><h3 id="b70cd48f-41bb-484c-a1f7-7af4e9f11a61" class=""><a href="https://www.coursera.org/illinois">University of Illinois at Urbana-Champaign</a>, <strong>Digital Marketing Specialization</strong></h3><p id="5d00ee77-f2aa-40b4-b853-3001a5a4dcae" class="block-color-gray"><em>2015</em></p><p id="7d56201e-44c3-48d5-b120-c6b16d728f4a" class="">
-</p><hr id="37b34a73-4ec8-424f-888a-bfeded491551"/><h1 id="f3d98310-c496-499a-9618-834d92b1df41" class="">LANGUAGES</h1><h3 id="45e56c5f-8289-4ab8-8b7c-a5eae34535fb" class="">English</h3><p id="42be8e9a-7f99-40be-b51c-b8e393730b27" class="block-color-gray">C1</p><h3 id="58cb7888-d745-495c-8eab-b3fef3f83061" class="">Russian</h3><p id="124f2501-8456-80b1-af57-df899a590fa3" class="block-color-gray">Native speaker </p><h3 id="124f2501-8456-8092-9008-c88121f28034" class="">Azerbaijani</h3><p id="e3cb2fbd-d24d-47cc-9035-19afbb22b1a7" class="block-color-gray">Native speaker </p><p id="cb45c73b-44f1-4d73-ad64-8fc35b6502a0" class="">
-</p><hr id="6ce66291-ea03-431f-b8ca-32f28208e6db"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	@media only screen {
+		body {
+			margin: 2em auto;
+			max-width: 900px;
+			color: rgb(55, 53, 47);
+		}
+	}
+	
+	body {
+		line-height: 1.5;
+		white-space: pre-wrap;
+	}
+	
+	a,
+	a.visited {
+		color: inherit;
+		text-decoration: underline;
+	}
+	
+	.pdf-relative-link-path {
+		font-size: 80%;
+		color: #444;
+	}
+	
+	h1,
+	h2,
+	h3 {
+		letter-spacing: -0.01em;
+		line-height: 1.2;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	
+	.page-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-top: 0;
+		margin-bottom: 0.75em;
+	}
+	
+	h1 {
+		font-size: 1.875rem;
+		margin-top: 1.875rem;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+		margin-top: 1.5rem;
+	}
+	
+	h3 {
+		font-size: 1.25rem;
+		margin-top: 1.25rem;
+	}
+	
+	.source {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		padding: 1.5em;
+		word-break: break-all;
+	}
+	
+	.callout {
+		border-radius: 3px;
+		padding: 1rem;
+	}
+	
+	figure {
+		margin: 1.25em 0;
+		page-break-inside: avoid;
+	}
+	
+	figcaption {
+		opacity: 0.5;
+		font-size: 85%;
+		margin-top: 0.5em;
+	}
+	
+	mark {
+		background-color: transparent;
+	}
+	
+	.indented {
+		padding-left: 1.5em;
+	}
+	
+	hr {
+		background: transparent;
+		display: block;
+		width: 100%;
+		height: 1px;
+		visibility: visible;
+		border: none;
+		border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+	}
+	
+	img {
+		max-width: 100%;
+	}
+	
+	@media only print {
+		img {
+			max-height: 100vh;
+			object-fit: contain;
+		}
+	}
+	
+	@page {
+		margin: 1in;
+	}
+	
+	.collection-content {
+		font-size: 0.875rem;
+	}
+	
+	.column-list {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.column {
+		padding: 0 1em;
+	}
+	
+	.column:first-child {
+		padding-left: 0;
+	}
+	
+	.column:last-child {
+		padding-right: 0;
+	}
+	
+	.table_of_contents-item {
+		display: block;
+		font-size: 0.875rem;
+		line-height: 1.3;
+		padding: 0.125rem;
+	}
+	
+	.table_of_contents-indent-1 {
+		margin-left: 1.5rem;
+	}
+	
+	.table_of_contents-indent-2 {
+		margin-left: 3rem;
+	}
+	
+	.table_of_contents-indent-3 {
+		margin-left: 4.5rem;
+	}
+	
+	.table_of_contents-link {
+		text-decoration: none;
+		opacity: 0.7;
+		border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+	}
+	
+	table,
+	th,
+	td {
+		border: 1px solid rgba(55, 53, 47, 0.09);
+		border-collapse: collapse;
+	}
+	
+	table {
+		border-left: none;
+		border-right: none;
+	}
+	
+	th,
+	td {
+		font-weight: normal;
+		padding: 0.25em 0.5em;
+		line-height: 1.5;
+		min-height: 1.5em;
+		text-align: left;
+	}
+	
+	th {
+		color: rgba(55, 53, 47, 0.6);
+	}
+	
+	ol,
+	ul {
+		margin: 0;
+		margin-block-start: 0.6em;
+		margin-block-end: 0.6em;
+	}
+	
+	li > ol:first-child,
+	li > ul:first-child {
+		margin-block-start: 0.6em;
+	}
+	
+	ul > li {
+		list-style: disc;
+	}
+	
+	ul.to-do-list {
+		padding-inline-start: 0;
+	}
+	
+	ul.to-do-list > li {
+		list-style: none;
+	}
+	
+	.to-do-children-checked {
+		text-decoration: line-through;
+		opacity: 0.375;
+	}
+	
+	ul.toggle > li {
+		list-style: none;
+	}
+	
+	ul {
+		padding-inline-start: 1.7em;
+	}
+	
+	ul > li {
+		padding-left: 0.1em;
+	}
+	
+	ol {
+		padding-inline-start: 1.6em;
+	}
+	
+	ol > li {
+		padding-left: 0.2em;
+	}
+	
+	.mono ol {
+		padding-inline-start: 2em;
+	}
+	
+	.mono ol > li {
+		text-indent: -0.4em;
+	}
+	
+	.toggle {
+		padding-inline-start: 0em;
+		list-style-type: none;
+	}
+	
+	/* Indent toggle children */
+	.toggle > li > details {
+		padding-left: 1.7em;
+	}
+	
+	.toggle > li > details > summary {
+		margin-left: -1.1em;
+	}
+	
+	.selected-value {
+		display: inline-block;
+		padding: 0 0.5em;
+		background: rgba(206, 205, 202, 0.5);
+		border-radius: 3px;
+		margin-right: 0.5em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		white-space: nowrap;
+	}
+	
+	.collection-title {
+		display: inline-block;
+		margin-right: 1em;
+	}
+	
+	.page-description {
+		margin-bottom: 2em;
+	}
+	
+	.simple-table {
+		margin-top: 1em;
+		font-size: 0.875rem;
+		empty-cells: show;
+	}
+	.simple-table td {
+		height: 29px;
+		min-width: 120px;
+	}
+	
+	.simple-table th {
+		height: 29px;
+		min-width: 120px;
+	}
+	
+	.simple-table-header-color {
+		background: rgb(247, 246, 243);
+		color: black;
+	}
+	.simple-table-header {
+		font-weight: 500;
+	}
+	
+	time {
+		opacity: 0.5;
+	}
+	
+	.icon {
+		display: inline-block;
+		max-width: 1.2em;
+		max-height: 1.2em;
+		text-decoration: none;
+		vertical-align: text-bottom;
+		margin-right: 0.5em;
+	}
+	
+	img.icon {
+		border-radius: 3px;
+	}
+	
+	.user-icon {
+		width: 1.5em;
+		height: 1.5em;
+		border-radius: 100%;
+		margin-right: 0.5rem;
+	}
+	
+	.user-icon-inner {
+		font-size: 0.8em;
+	}
+	
+	.text-icon {
+		border: 1px solid #000;
+		text-align: center;
+	}
+	
+	.page-cover-image {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+		max-height: 30vh;
+	}
+	
+	.page-header-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	
+	.page-header-icon-with-cover {
+		margin-top: -0.72em;
+		margin-left: 0.07em;
+	}
+	
+	.page-header-icon img {
+		border-radius: 3px;
+	}
+	
+	.link-to-page {
+		margin: 1em 0;
+		padding: 0;
+		border: none;
+		font-weight: 500;
+	}
+	
+	p > .user {
+		opacity: 0.5;
+	}
+	
+	td > .user,
+	td > time {
+		white-space: nowrap;
+	}
+	
+	input[type="checkbox"] {
+		transform: scale(1.5);
+		margin-right: 0.6em;
+		vertical-align: middle;
+	}
+	
+	p {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	
+	.image {
+		border: none;
+		margin: 1.5em 0;
+		padding: 0;
+		border-radius: 0;
+		text-align: center;
+	}
+	
+	.code,
+	code {
+		background: rgba(135, 131, 120, 0.15);
+		border-radius: 3px;
+		padding: 0.2em 0.4em;
+		border-radius: 3px;
+		font-size: 85%;
+		tab-size: 2;
+	}
+	
+	code {
+		color: #eb5757;
+	}
+	
+	.code {
+		padding: 1.5em 1em;
+	}
+	
+	.code-wrap {
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+	
+	.code > code {
+		background: none;
+		padding: 0;
+		font-size: 100%;
+		color: inherit;
+	}
+	
+	blockquote {
+		font-size: 1.25em;
+		margin: 1em 0;
+		padding-left: 1em;
+		border-left: 3px solid rgb(55, 53, 47);
+	}
+	
+	.bookmark {
+		text-decoration: none;
+		max-height: 8em;
+		padding: 0;
+		display: flex;
+		width: 100%;
+		align-items: stretch;
+	}
+	
+	.bookmark-title {
+		font-size: 0.85em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		height: 1.75em;
+		white-space: nowrap;
+	}
+	
+	.bookmark-text {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.bookmark-info {
+		flex: 4 1 180px;
+		padding: 12px 14px 14px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	
+	.bookmark-image {
+		width: 33%;
+		flex: 1 1 180px;
+		display: block;
+		position: relative;
+		object-fit: cover;
+		border-radius: 1px;
+	}
+	
+	.bookmark-description {
+		color: rgba(55, 53, 47, 0.6);
+		font-size: 0.75em;
+		overflow: hidden;
+		max-height: 4.5em;
+		word-break: break-word;
+	}
+	
+	.bookmark-href {
+		font-size: 0.75em;
+		margin-top: 0.25em;
+	}
+	
+	.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+	.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+	.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+	.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+	.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+	.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+	.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+	.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+	.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+	.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+	.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+	.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+	.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+	.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+	.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+	.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+	.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+	.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+	.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+	.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+	.highlight-default {
+		color: rgba(55, 53, 47, 1);
+	}
+	.highlight-gray {
+		color: rgba(120, 119, 116, 1);
+		fill: rgba(120, 119, 116, 1);
+	}
+	.highlight-brown {
+		color: rgba(159, 107, 83, 1);
+		fill: rgba(159, 107, 83, 1);
+	}
+	.highlight-orange {
+		color: rgba(217, 115, 13, 1);
+		fill: rgba(217, 115, 13, 1);
+	}
+	.highlight-yellow {
+		color: rgba(203, 145, 47, 1);
+		fill: rgba(203, 145, 47, 1);
+	}
+	.highlight-teal {
+		color: rgba(68, 131, 97, 1);
+		fill: rgba(68, 131, 97, 1);
+	}
+	.highlight-blue {
+		color: rgba(51, 126, 169, 1);
+		fill: rgba(51, 126, 169, 1);
+	}
+	.highlight-purple {
+		color: rgba(144, 101, 176, 1);
+		fill: rgba(144, 101, 176, 1);
+	}
+	.highlight-pink {
+		color: rgba(193, 76, 138, 1);
+		fill: rgba(193, 76, 138, 1);
+	}
+	.highlight-red {
+		color: rgba(212, 76, 71, 1);
+		fill: rgba(212, 76, 71, 1);
+	}
+	.highlight-default_background {
+		color: rgba(55, 53, 47, 1);
+	}
+	.highlight-gray_background {
+		background: rgba(241, 241, 239, 1);
+	}
+	.highlight-brown_background {
+		background: rgba(244, 238, 238, 1);
+	}
+	.highlight-orange_background {
+		background: rgba(251, 236, 221, 1);
+	}
+	.highlight-yellow_background {
+		background: rgba(251, 243, 219, 1);
+	}
+	.highlight-teal_background {
+		background: rgba(237, 243, 236, 1);
+	}
+	.highlight-blue_background {
+		background: rgba(231, 243, 248, 1);
+	}
+	.highlight-purple_background {
+		background: rgba(244, 240, 247, 0.8);
+	}
+	.highlight-pink_background {
+		background: rgba(249, 238, 243, 0.8);
+	}
+	.highlight-red_background {
+		background: rgba(253, 235, 236, 1);
+	}
+	.block-color-default {
+		color: inherit;
+		fill: inherit;
+	}
+	.block-color-gray {
+		color: rgba(120, 119, 116, 1);
+		fill: rgba(120, 119, 116, 1);
+	}
+	.block-color-brown {
+		color: rgba(159, 107, 83, 1);
+		fill: rgba(159, 107, 83, 1);
+	}
+	.block-color-orange {
+		color: rgba(217, 115, 13, 1);
+		fill: rgba(217, 115, 13, 1);
+	}
+	.block-color-yellow {
+		color: rgba(203, 145, 47, 1);
+		fill: rgba(203, 145, 47, 1);
+	}
+	.block-color-teal {
+		color: rgba(68, 131, 97, 1);
+		fill: rgba(68, 131, 97, 1);
+	}
+	.block-color-blue {
+		color: rgba(51, 126, 169, 1);
+		fill: rgba(51, 126, 169, 1);
+	}
+	.block-color-purple {
+		color: rgba(144, 101, 176, 1);
+		fill: rgba(144, 101, 176, 1);
+	}
+	.block-color-pink {
+		color: rgba(193, 76, 138, 1);
+		fill: rgba(193, 76, 138, 1);
+	}
+	.block-color-red {
+		color: rgba(212, 76, 71, 1);
+		fill: rgba(212, 76, 71, 1);
+	}
+	.block-color-default_background {
+		color: inherit;
+		fill: inherit;
+	}
+	.block-color-gray_background {
+		background: rgba(241, 241, 239, 1);
+	}
+	.block-color-brown_background {
+		background: rgba(244, 238, 238, 1);
+	}
+	.block-color-orange_background {
+		background: rgba(251, 236, 221, 1);
+	}
+	.block-color-yellow_background {
+		background: rgba(251, 243, 219, 1);
+	}
+	.block-color-teal_background {
+		background: rgba(237, 243, 236, 1);
+	}
+	.block-color-blue_background {
+		background: rgba(231, 243, 248, 1);
+	}
+	.block-color-purple_background {
+		background: rgba(244, 240, 247, 0.8);
+	}
+	.block-color-pink_background {
+		background: rgba(249, 238, 243, 0.8);
+	}
+	.block-color-red_background {
+		background: rgba(253, 235, 236, 1);
+	}
+	.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+	.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+	.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+	.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+	.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+	.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+	.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+	.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+	.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+	.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+	.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+	.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+	.select-value-color-pageGlass { background-color: undefined; }
+	.select-value-color-washGlass { background-color: undefined; }
+	
+	.checkbox {
+		display: inline-flex;
+		vertical-align: text-bottom;
+		width: 16;
+		height: 16;
+		background-size: 16px;
+		margin-left: 2px;
+		margin-right: 5px;
+	}
+	
+	.checkbox-on {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+	}
+	
+	.checkbox-off {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+	}
+		
+	</style></head><body><article id="0a861aa6-67fc-4508-97dc-2db4c9d368ec" class="page sans"><header><h1 class="page-title">RAMIL GASANOV</h1><p class="page-description"></p></header><div class="page-body"><div id="126f2501-8456-80e1-9077-ee719def69f5" class="column-list"><div id="126f2501-8456-80cd-a7cc-f81f3af2a4c8" style="width:43.75%" class="column"><figure id="126f2501-8456-80fc-809a-cd07d80e5b03" class="image"><a href="imgs/40aaadc7-747b-49a0-8e09-8fd6eb4f06e4.png"><img style="width:336px" src="imgs/40aaadc7-747b-49a0-8e09-8fd6eb4f06e4.png"/></a></figure></div><div id="126f2501-8456-8059-b355-f654d2c58448" style="width:56.25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9feafab8-8f9e-4df2-ade4-7e90cc63fd55"><div style="font-size:1.5em"><span class="icon">👋</span></div>
+	<div style="width:100%">Founding head of product marketing with over a decade of experience driving growth for developer tools. Successfully launched 8 products and took company from startup to multi-million dollar exit. Proven track record in managing teams of 15 and driving cross-functional collaboration across engineering, sales, marketing, and customer support.<br/><br/><br/>✉️ <a href="mailto:gasanoff.ramil@gmail.com">gasanoff.ramil@gmail.com</a><br/><br/><img style="max-width: 4%;" src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png"> <a href="https://www.linkedin.com/in/gasanoff/">linkedin.com/in/gasanoff/</a> </div></figure></div></div><h1 id="6507c7f5-bfc1-4c05-a058-7d05becdac6c" class="">EXPERIENCE</h1><h3 id="4ad399f9-58b8-4eb4-a624-19a532cc09c4" class="">Head of Product Marketing</h3><p id="124f2501-8456-80d2-803c-d9d70b5bab47" class="block-color-gray">CAD Exchanger<em>, Baku, Azerbaijan (Jan 2022 - Nov 2024)</em></p><ul id="137f2501-8456-8077-b4bd-dda97383a754" class="bulleted-list"><li style="list-style-type:disc">Designed GTM strategy for CAD Exchanger SDK, achieving 2x YoY revenue growth 10 consecutive years.</li></ul><ul id="137f2501-8456-8078-a7e9-e4e7c11d49f3" class="bulleted-list"><li style="list-style-type:disc">Led release of 8 end-user and developer tools, including a CLI batch processor, 3D web visualization toolkit, Cloud API, and mechanical feature recognition algorithm, driving adoption by 1M+ engineers globally.</li></ul><ul id="137f2501-8456-8051-8eff-fe6422f70a0c" class="bulleted-list"><li style="list-style-type:disc">Analyzed the competitive landscape to refine market positioning, delivering data-driven insights for pricing & licensing strategy, product roadmap, and messaging to ensure strong resonance with the ICP.</li></ul><ul id="137f2501-8456-80c7-85a1-d330621e8d0b" class="bulleted-list"><li style="list-style-type:disc">Acted as SDK advisor on enterprise deals, securing Siemens, Hyundai and Li Auto.</li></ul><ul id="137f2501-8456-80c7-85a1-d330621e8d0b" class="bulleted-list"><li style="list-style-type:disc">Aligned sales, engineering, marketing, and customer support teams by defining clear roles for pre-release, release, and post-release activities, improving deliverability and managing customer expectations effectively.</li></ul><h3 id="124f2501-8456-80ea-ba23-c998f0aca974" class="">Head of Marketing </h3><p id="b3e92e52-6886-4178-8fed-2f2035c213e3" class="block-color-gray">CAD Exchanger<em>, Baku, Azerbaijan (Jan 2018 - Dec 2021)</em></p><ul id="126f2501-8456-8039-bfa7-e452bdd21247" class="bulleted-list"><li style="list-style-type:disc">Recruited and developed a high-performing team of 15, including designers, content managers, web developers, and outreach specialists, aligning their individual KPIs with team OKRs.</ul><ul id="137f2501-8456-809e-bba1-c74443babe65" class="bulleted-list"><li style="list-style-type:disc">Grew organic traffic 10x via technical content (tutorials, case studies) and SEO, surpassing competitors by 3x.</li></ul><ul id="137f2501-8456-8042-b43f-fb8684ddad56" class="bulleted-list"><li style="list-style-type:disc">Enhanced brand recognition through public speaking engagements and participation in industry events.</li></ul><ul id="137f2501-8456-8074-a122-ef11b9b8b23f" class="bulleted-list"><li style="list-style-type:disc">Negotiated Microsoft Startups partnership to launch Cloud toolkit, enabling launch of CAD Exchanger Cloud.</li></ul><ul id="137f2501-8456-80e6-9e89-e37394d6f774" class="bulleted-list"><li style="list-style-type:disc">Led the launch of new products and features, distributing them across omnichannel platforms to 100K+ customers and prospects.</li></ul><ul id="137f2501-8456-8089-9584-ee8f9b9f4aa6" class="bulleted-list"><li style="list-style-type:disc">Managed a high-performing cross-functional team of 15, setting clear KPIs and driving accountability across Sales, Marketing, and Product functions.</li></ul><h3 id="4410c0b9-3370-4f58-89d3-f856fc7dc156" class="">Sr. Technical Marketing Engineer</h3><p id="2239c55a-bd0a-44ed-8b72-907c18b6903f" class="block-color-gray">CAD Exchanger<em>, Nizhny Novgorod, Russia (Jan 2017 - Dec 2017)</em></p><ul id="f05cdfd6-0abb-47b1-972f-22df272394ba" class="bulleted-list"><li style="list-style-type:disc">Developed and implemented an SEO strategy that positioned CAD Exchanger as a market leader.</li></ul><ul id="137f2501-8456-8059-ac4e-f19e9400e804" class="bulleted-list"><li style="list-style-type:disc">Designed and automated reporting dashboards for product and website metrics, enabling data-driven decision-making to fuel growth.</li></ul><h3 id="6d22bf41-2d0d-450e-9e62-a1fd48a49bf8" class="">Technical Marketing Engineer</h3><p id="3f8394dd-4fe7-488a-bdd8-7d4712ee1230" class="block-color-gray">CAD Exchanger<em>, Nizhny Novgorod, Russia (Feb 2015 - Dec 2016)</em></p><ul id="126f2501-8456-802f-b260-ccd9bf18cccc" class="bulleted-list"><li style="list-style-type:disc">Conducted product demonstrations and provided sales support.</li></ul><ul id="128f2501-8456-80e7-ad58-f3212553faf3" class="bulleted-list"><li style="list-style-type:disc">Built marketing technology stack for email, social media and sales automation. </li></ul><ul id="126f2501-8456-80a5-9f68-f42de7705b5f" class="bulleted-list"><li style="list-style-type:disc">Wrote customer success stories and blog posts.</li></ul><p id="35c28b3c-4754-435c-9a04-584204b97a1c" class="">
+	</p><hr id="124f2501-8456-80f7-b452-e2153d899b0b"/><h1 id="c4cf055a-931b-4211-a540-b74be6b22c60" class="">PUBLIC TALKS AND ARTICLES</h1><p id="7cec7e4e-5ea7-45c5-ab92-8095fcf6d67b" class=""><span style="border-bottom:0.05em solid">PUBLIC TALKS</span></p><h3 id="657caba7-da6b-48cc-a9d6-374c2363adcd" class="">Overview of CAD Exchanger SDK</h3><p id="f9ed3777-dbd1-4a5b-b82a-e3b6f85b35a8" class=""><em>C3Days 2021, 2022, 2023</em></p><h3 id="d4938855-b05a-4773-ace2-1fbd5d9ca457" class="">Native technology stack for Industry 4.0</h3><p id="9aa30cab-0b9f-4c30-b010-679122c5a087" class=""><em>CIPR tech, 2022</em></p><h3 id="5bfa2dbf-5ece-4dd6-9ffd-81ab5c6b8b36" class=""><a href="https://www.youtube.com/live/mfs5XgUaZdU?feature=shared&amp;t=625">Pitch session</a></h3><p id="86744358-670b-44ee-84ea-0533e521dd4b" class=""><em>CIPR tech 2021</em></p><h3 id="10a91f12-0d95-45ad-91a3-bd38e8047bca" class="">3 reasons to move CAD data exchange to Web</h3><p id="772aa389-d089-4d47-badb-72f46c4733f6" class=""><em>LEQ: Lean, Engineering, Quality, 2019</em></p><p id="188fae4e-3ce0-462d-986e-6e51fe1dee09" class="">
+	</p><p id="410ab0a9-874b-458b-9cbe-441755bf29d9" class=""><span style="border-bottom:0.05em solid">ARTICLES</span></p><h3 id="b4d8fd89-5eff-4c9b-9d2a-4b3505e8b244" class="">100+ publications in industry magazines:</h3><ul id="61f24335-3d41-4242-a762-1e0226a85780" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.digitalengineering247.com/topic/tag/CAD-Exchanger">DigitalEngineering</a> </li></ul><ul id="cce28a53-d93c-4415-afc4-a7b4c6b7ad6f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://develop3d.com/tag/cad-exchanger/">DEVELOP3D</a> </li></ul><ul id="7e5f1f54-bc9c-4c0f-9b1f-99ea2bcc3872" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.solidsmack.com/cad/cad-exchanger-adds-u3d-support-3d-cad-file-import-to-unity/">SolidSmack</a> </li></ul><ul id="5cfb2c4c-6aa0-4a12-a27d-fd09e44c435c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://isicad.net/news.php?news=21211">IsiCAD.net</a></li></ul><ul id="303db6d2-6fa4-4cd3-9712-b83faf9e5b07" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.upfrontezine.com/2018/04/upf-974.html">CAD Exchanger on the Cloud</a></li></ul><p id="6f1b0ccf-3789-40e4-9fda-aea1dd3b2e56" class="">
+	</p><hr id="1db2d249-15cb-490c-9cea-06831aa25ced"/><h1 id="73ae985d-959d-4457-8025-100b9722f631" class="">EDUCATION AND CERTIFICATIONS</h1><p id="669c846b-bc73-4cac-8f63-1cad5ba9d0c3" class=""><span style="border-bottom:0.05em solid">EDUCATION</span></p><h3 id="f764c081-a981-4c19-9804-d3844a096441" class="">Higher School of Economics, Innovation Management, PhD</h3><p id="1d0641f5-fbd6-4227-a7b6-9c9e06731cda" class="block-color-gray"><em>2021 (unfinished due to Relocation)</em></p><h3 id="71eb3695-b175-42a1-9550-e6a74f511f1c" class="">RANEPA, Marketing Management MSc</h3><p id="d494d71e-4050-4c3f-b7c2-58a5d862b9a5" class="block-color-gray"><em>2015</em></p><h3 id="a55b2b49-af68-4251-bca4-854088d9e894" class="">Higher School of Economics, Management BSc</h3><p id="3dede4fb-09f8-47b6-ba22-b23fe118ccc0" class="block-color-gray"><em>2013</em></p><p id="cde5f0ac-7207-4df0-b879-b9b24b508d3d" class="">
+	</p><p id="ac7119b9-d6b5-4be1-8db3-2d7d5116cc3c" class=""><span style="border-bottom:0.05em solid">CERTIFICATIONS</span></p><div id="124f2501-8456-80ec-a08e-ca9b5ff24d18" class="column-list"><div id="124f2501-8456-8096-a0e6-c6f43edc4a92" style="width:50%" class="column"><figure id="124f2501-8456-8040-8d07-f6148b26fb48" class="image"><a href="imgs/image.png"><img style="width:330.984375px" src="imgs/image.png"/></a></figure></div><div id="124f2501-8456-80c6-be8b-d8a29a8df85e" style="width:50%" class="column"><figure id="124f2501-8456-80aa-bffa-f76e2f215a07" class="image" style="text-align:center"><a href="imgs/prompt-design-in-vertex-ai-skill-badge.png"><img style="width:240px" src="imgs/prompt-design-in-vertex-ai-skill-badge.png"/></a></figure></div></div><div id="124f2501-8456-80fe-91e3-ecebaf0f8350" class="column-list"><div id="124f2501-8456-802f-9f9d-ecffffc9a5f0" style="width:50%" class="column"><figure id="124f2501-8456-80bf-9d13-fc49419a5632" class="image"><a href="imgs/image1.png"><img style="width:707.984375px" src="imgs/image1.png"/></a></figure></div><div id="124f2501-8456-8017-9d6d-cdc6250fb077" style="width:50%" class="column"><figure id="124f2501-8456-80c9-8d9a-fc4a74832b65" class="image"><a href="imgs/image2.png"><img style="width:330.984375px" src="imgs/image2.png"/></a></figure></div></div><p id="124f2501-8456-803c-a451-cb8039ed9ba7" class="block-color-gray"><em>2024 </em></p><h3 id="124f2501-8456-8058-b7ce-e6b9c88cdea7" class="">Yandex Praktikum, <a href="https://practicum.yandex.ru/python-free/">Python Development Basics</a></h3><p id="212437c5-c3a8-43f9-9baf-aa61e285fc03" class="block-color-gray"><em>2021 </em></p><h3 id="b70cd48f-41bb-484c-a1f7-7af4e9f11a61" class=""><a href="https://www.coursera.org/illinois">University of Illinois at Urbana-Champaign</a>, <strong>Digital Marketing Specialization</strong></h3><p id="5d00ee77-f2aa-40b4-b853-3001a5a4dcae" class="block-color-gray"><em>2015</em></p><p id="7d56201e-44c3-48d5-b120-c6b16d728f4a" class="">
+	</p><hr id="37b34a73-4ec8-424f-888a-bfeded491551"/><h1 id="f3d98310-c496-499a-9618-834d92b1df41" class="">LANGUAGES</h1><h3 id="45e56c5f-8289-4ab8-8b7c-a5eae34535fb" class="">English</h3><p id="42be8e9a-7f99-40be-b51c-b8e393730b27" class="block-color-gray">C1</p><h3 id="58cb7888-d745-495c-8eab-b3fef3f83061" class="">Russian</h3><p id="124f2501-8456-80b1-af57-df899a590fa3" class="block-color-gray">Native speaker </p><h3 id="124f2501-8456-8092-9008-c88121f28034" class="">Azerbaijani</h3><p id="e3cb2fbd-d24d-47cc-9035-19afbb22b1a7" class="block-color-gray">Native speaker </p><p id="cb45c73b-44f1-4d73-ad64-8fc35b6502a0" class="">
+	</p><hr id="6ce66291-ea03-431f-b8ca-32f28208e6db"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
